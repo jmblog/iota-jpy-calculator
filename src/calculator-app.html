@@ -1,14 +1,35 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/app-layout/app-layout.html">
 
 <dom-module id="calculator-app">
   <template>
     <style>
       :host {
         display: block;
-        padding: 0 16px;
+        position: relative;
+        min-height: 100vh;
+        --app-primary-color: #303030;
+        --app-secondary-color: #5f6e80;
+        --app-accent-color: #6391fe;
+        --app-border-color: #e5e5e5;
+        --paper-button-ink-color: var(--app-accent-color);
+        --paper-icon-button-ink-color: var(--app-accent-color);
+        --paper-spinner-color: var(--app-accent-color);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        color: var(--app-primary-color);
+      }
+
+      app-toolbar {
+        height: 98px;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        border-bottom: 1px solid var(--app-border-color);
       }
     </style>
-    <h1>IOTA/JPY Calculator</h1>
+    <app-toolbar>
+      <div main-title>IOTA/JPY Calculator</div>
+    </app-toolbar>
   </template>
 
   <script>
