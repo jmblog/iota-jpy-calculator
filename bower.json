@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "webcomponentsjs": "^1.0.19"
+    "webcomponentsjs": "^1.0.19",
+    "app-layout": "PolymerElements/app-layout#^2.0.4"
   }
 }
