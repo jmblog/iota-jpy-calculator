@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="calculator-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 0 16px;
+      }
+    </style>
+    <h1>IOTA/JPY Calculator</h1>
+  </template>
+
+  <script>
+    class CalculatorApp extends Polymer.Element {
+      static get is() { return 'calculator-app'; }
+
+      constructor() {
+        super()
+      }
+
+      ready() {
+        super.ready();
+        // Custom elements polyfill safe way to indicate an element has been upgraded.
+        this.removeAttribute('unresolved');
+      }
+    }
+
+    window.customElements.define(CalculatorApp.is, CalculatorApp);
+  </script>
+
+</dom-module>

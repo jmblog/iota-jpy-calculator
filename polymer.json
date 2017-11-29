@@ -1,0 +1,12 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/calculator-app.html",
+  "fragments": [],
+  "sources": ["src/**/*", "images/**/*", "bower.json"],
+  "extraDependencies": ["manifest.json", "bower_components/webcomponentsjs/*", "app.yaml"],
+  "builds": [
+    {
+      "preset": "es5-bundled"
+    }
+  ]
+}
