@@ -1,0 +1,91 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="iota-ticker">
+  <template>
+    <style>
+      .ticker {
+        display: flex;
+        flex-direction: column;
+        font-weight: 300;
+        min-width: 300px;
+        margin-bottom: 24px;
+      }
+
+      .ticker-label {
+        color: var(--app-secondary-color);
+        padding-bottom: 16px;
+      }
+
+      .ticker-price {
+        display: flex;
+        align-items: baseline;
+        font-size: 48px;
+        line-height: 1;
+        color: var(--app-accent-color);
+      }
+
+      .ticker-price-decimal {
+        margin-left: 4px;
+        font-size: 24px;
+      }
+
+      .ticker-price-per {
+        margin-left: 16px;
+        color: var(--app-secondary-color);
+        font-size: 16px;
+      }
+
+      @media (max-width: 767px) {
+        .ticker {
+          min-width: auto;
+          margin-bottom: 36px;
+        }
+      }
+    </style>
+    <div class="ticker">
+      <div class="ticker-label">IOTA/JPY</div>
+      <div class="ticker-price">
+        <span>¥ [[priceInteger]]</span>
+        <span class="ticker-price-decimal">[[priceDecimal]]</span>
+        <span class="ticker-price-per">/ 1 Mi</span>
+      </div>
+    </div>
+  </template>
+  <script>
+    class IotaTicker extends Polymer.Element {
+      static get is() { return 'iota-ticker'; }
+
+      static get properties() {
+        return {
+          price: {
+            type: Number,
+            value: 0,
+          },
+          priceInteger: {
+            type: String,
+            value: 0,
+            computed: 'computeInteger(price)'
+          },
+          priceDecimal: {
+            type: String,
+            value: 0,
+            computed: 'computeDecimal(price)'
+          }
+        }
+      }
+
+      computeInteger(price) {
+        return numeral(price).format('0,0')
+      }
+
+      computeDecimal(price) {
+        return numeral(price).format('.00')
+      }
+
+      constructor() {
+        super()
+      }
+    }
+    window.customElements.define(IotaTicker.is, IotaTicker);
+  </script>
+</dom-module>

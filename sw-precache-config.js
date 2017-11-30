@@ -20,7 +20,11 @@ module.exports = {
       handler: 'cacheFirst',
     },
     {
-      urlPattern: /https:\/\/cdn\.pubnub\.com\/sdk\/javascript\/pubnub\.4\.18\.0\.min\.js/,
+      urlPattern: /cdn\.pubnub\.com/,
+      handler: 'cacheFirst',
+    },
+    {
+      urlPattern: /cdnjs\.cloudflare\.com/,
       handler: 'cacheFirst',
     },
   ],

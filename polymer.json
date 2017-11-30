@@ -1,6 +1,6 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/calculator-app.html",
+  "shell": "src/iota-jpy-app.html",
   "fragments": [],
   "sources": ["src/**/*", "images/**/*", "bower.json"],
   "extraDependencies": ["manifest.json", "bower_components/webcomponentsjs/*", "app.yaml"],
