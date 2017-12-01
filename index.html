@@ -16,13 +16,12 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
   <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.18.0.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Lato', sans-serif;
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.5;
       min-height: 100vh;
     }
@@ -31,6 +30,7 @@
 
     iota-app[unresolved] {
       display: block;
+      text-align: center;
       min-height: 101vh;
       line-height: 98px;
       font-size: 24px;
@@ -40,14 +40,20 @@
       padding: 0 16px;
       overflow: visible;
     }
+
+    @media (max-width: 767px) {
+      iota-app[unresolved] {
+        font-size: 20px;
+        line-height: 72px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <iota-app unresolved>IOTA/JPY Calculator</iota-app>
-
-  <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-  <link rel="import" href="src/iota-app.html">
+  <script src="./common.js"></script>
+  <script src="./iota-app.js"></script>
 </body>
 
 </html>
