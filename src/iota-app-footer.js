@@ -50,7 +50,7 @@ class IotaAppFooter extends PolymerElement {
         IOTA Address:
         <pre>ZMSIPJODCKDCVLAKMF9ECFVREWKRPRHVUKP9GBKMCWGEYFCOBTIJWRLVNPHPCYUJKGQRGZANUJVXXALVXCJD9SXYC9</pre>
       </div>
-      <address>&copy; ${new Date().getFullYear()} Yoshihide Jimbo</address>
+      <address>&copy; ${new Date().getFullYear()} Yoshihide Jimbo. All rights reserved.</address>
       `;
   }
 }
