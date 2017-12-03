@@ -2,8 +2,8 @@
   "name": "iota-jpy-calculator",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "@kaizenplatform/prettier-config": "^0.1.0",
@@ -12,11 +12,13 @@
     "babel-plugin-transform-custom-element-classes": "^0.1.0",
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.3",
     "html-webpack-plugin": "^2.30.1",
     "prettier": "^1.8.2",
     "uglifyjs-webpack-plugin": "^1.1.2",
     "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack-dev-server": "^2.9.5",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "@polymer/polymer": "^3.0.0-pre.1",
