@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new CopyWebpackPlugin(['images', 'manifest.json', 'service-worker.js']),
+    new CopyWebpackPlugin(['manifest.json', { from: 'images/', to: 'images/' }]),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
     }),
