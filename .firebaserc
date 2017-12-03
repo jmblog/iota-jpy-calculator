@@ -1,5 +1,5 @@
 {
   "projects": {
-    "production": "iota-jpy-calculator"
+    "default": "iota-jpy-calculator"
   }
 }
