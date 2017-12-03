@@ -1,5 +1,4 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-import { DomIf } from '@polymer/polymer/lib/elements/dom-if';
 import '@webcomponents/webcomponentsjs/webcomponents-sd-ce';
 import axios from 'axios';
 import io from 'socket.io-client';
@@ -38,19 +37,17 @@ class IotaApp extends PolymerElement {
       </style>
 
       <iota-app-header></iota-app-header>
-      <template is="dom-if" if="[[iot_jpy]]">
-        <div class="container">
-          <iota-ticker price="[[iot_jpy]]"></iota-ticker>
-          <iota-ticker-sub price="[[btc_jpy]]" unit="JPY/BTC" format="0,0"></iota-ticker-sub>
-          <iota-ticker-sub price="[[iot_btc]]" unit="BTC/Mi"></iota-ticker-sub>
-        </div>
-        <div class="container">
-          <iota-calculator unit-price="[[iot_jpy]]" calculated-currency="JPY"></iota-calculator>
-        </div>
-        <div class="container">
-          <iota-app-footer></iota-app-footer>
-        </div>
-      </template>
+      <div class="container">
+        <iota-ticker price="[[iot_jpy]]"></iota-ticker>
+        <iota-ticker-sub price="[[btc_jpy]]" unit="JPY/BTC" format="0,0"></iota-ticker-sub>
+        <iota-ticker-sub price="[[iot_btc]]" unit="BTC/Mi"></iota-ticker-sub>
+      </div>
+      <div class="container">
+        <iota-calculator unit-price="[[iot_jpy]]" calculated-currency="JPY"></iota-calculator>
+      </div>
+      <div class="container">
+        <iota-app-footer></iota-app-footer>
+      </div>
       `;
   }
 
