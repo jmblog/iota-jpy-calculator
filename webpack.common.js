@@ -24,6 +24,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './index.html',
+      minify: {
+        caseSensitive: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
+      },
     }),
   ],
   output: {
