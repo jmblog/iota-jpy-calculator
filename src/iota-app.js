@@ -97,10 +97,10 @@ class IotaApp extends PolymerElement {
       elm.src = `./${resource}.js`;
       document.body.appendChild(elm);
     });
-    // TODO: Register service worker if supported.
-    // if ('serviceWorker' in navigator) {
-    //   navigator.serviceWorker.register('service-worker.js', { scope: '/' });
-    // }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js', { scope: '/' });
+    }
   }
 
   _getInitialPrice(fromSymbol, toSymbol) {
