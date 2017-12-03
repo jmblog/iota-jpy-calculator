@@ -84,10 +84,10 @@ class IotaCalculator extends PolymerElement {
     <div class="title">Calculator</div>
     <div class="calculator">
       <div class="input-wrapper">
-        IOTA <input class="input" type="number" placeholder="" value="{{price}}" on-change="handlePriceChange">
+        IOTA <input class="input" type="number" placeholder="" value="{{amount}}" on-change="handleAmountChange">
       </div>
       <div class="unit-button-group">
-        <button class="unit-button" data-coefficient="mi" on-click="handleUnitChange" active>Mi</button>
+        <button class="unit-button" data-coefficient="mi" on-click="handleUnitChange">Mi</button>
         <button class="unit-button" data-coefficient="gi" on-click="handleUnitChange">Gi</button>
         <button class="unit-button" data-coefficient="ti" on-click="handleUnitChange">Ti</button>
         <button class="unit-button" data-coefficient="pi" on-click="handleUnitChange">Pi</button>
@@ -106,6 +106,11 @@ class IotaCalculator extends PolymerElement {
 
   ready() {
     super.ready();
+    this.shadowRoot.querySelectorAll('.unit-button').forEach(element => {
+      if (element.getAttribute('data-coefficient') === this.unit) {
+        element.setAttribute('active', true);
+      }
+    });
   }
 
   static get properties() {
@@ -118,29 +123,30 @@ class IotaCalculator extends PolymerElement {
       unit: {
         type: String,
         notify: true,
-        value: 'mi',
+        value: window.localStorage.getItem('iotaUnit') || 'mi',
       },
       calculatedCurrency: {
         type: String,
       },
-      price: {
+      amount: {
         type: Number,
-        value: 1000,
+        value: window.localStorage.getItem('iotaAmount') || 1000,
         notify: true,
       },
       calculatedPrice: {
         type: String,
-        computed: 'calculatePrice(unitPrice, price, unit)',
+        computed: 'calculatePrice(unitPrice, amount, unit)',
       },
     };
   }
 
-  calculatePrice(unitPrice, price, unit) {
-    return numeral(unitPrice * price / 1000000 * this.coefficient(unit)).format('0,0');
+  calculatePrice(unitPrice, amount, unit) {
+    return numeral(unitPrice * amount / 1000000 * this.coefficient(unit)).format('0,0');
   }
 
-  handlePriceChange(e) {
-    this.price = e.target.value;
+  handleAmountChange(e) {
+    this.amount = e.target.value;
+    window.localStorage.setItem('iotaAmount', this.amount);
   }
 
   coefficient(unit) {
@@ -160,6 +166,7 @@ class IotaCalculator extends PolymerElement {
     });
     e.target.setAttribute('active', true);
     this.unit = e.target.getAttribute('data-coefficient');
+    window.localStorage.setItem('iotaUnit', this.unit);
   }
 }
 
