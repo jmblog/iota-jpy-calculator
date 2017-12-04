@@ -1,5 +1,4 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-import '@webcomponents/webcomponentsjs/webcomponents-sd-ce';
 import axios from 'axios';
 import io from 'socket.io-client';
 import lazyResources from './lazy-resources.json';

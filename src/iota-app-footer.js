@@ -1,5 +1,4 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-import '@webcomponents/webcomponentsjs/webcomponents-sd-ce';
 
 class IotaAppFooter extends PolymerElement {
   constructor() {

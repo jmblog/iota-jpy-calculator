@@ -1,5 +1,4 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-import '@webcomponents/webcomponentsjs/webcomponents-sd-ce';
 import numeral from 'numeral';
 
 class IotaTickerSub extends PolymerElement {
