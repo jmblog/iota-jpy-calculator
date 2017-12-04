@@ -40,13 +40,6 @@ class IotaTicker extends PolymerElement {
         color: var(--app-secondary-color);
         font-size: 16px;
       }
-
-      @media (max-width: 767px) {
-        .ticker {
-          min-width: auto;
-          margin-bottom: 36px;
-        }
-      }
       </style>
       <div class="ticker">
       <div class="ticker-label">IOTA / JPY</div>
