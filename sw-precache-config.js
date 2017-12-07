@@ -6,10 +6,6 @@ module.exports = {
       handler: 'cacheFirst',
     },
     {
-      urlPattern: /cdn\.pubnub\.com/,
-      handler: 'cacheFirst',
-    },
-    {
       urlPattern: /cdnjs\.cloudflare\.com/,
       handler: 'cacheFirst',
     },

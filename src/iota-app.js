@@ -28,14 +28,30 @@ class IotaApp extends PolymerElement {
         max-width: 420px;
       }
 
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 98px;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        border-bottom: 1px solid var(--app-border-color);
+        background-color: #fff;
+      }
+
       @media (max-width: 767px) {
         .container {
           max-width: 300px;
         }        
+        .header {
+          height: 72px;
+          font-size: 20px;
+        }
       }
       </style>
 
-      <iota-app-header></iota-app-header>
+      <div class="header">IOTA/JPY Calculator</div>
       <div class="container">
         <iota-ticker price="[[iot_jpy]]"></iota-ticker>
         <iota-ticker-sub price="[[btc_jpy]]" unit="JPY/BTC" format="0,0"></iota-ticker-sub>
@@ -80,11 +96,11 @@ class IotaApp extends PolymerElement {
 
   ready() {
     super.ready();
+    this._ensureLazyLoaded();
     Promise.all([this._getInitialPrice('btc', 'jpy'), this._getInitialPrice('iot', 'btc')]);
     this._subscribeCryptoCompare();
     // Custom elements polyfill safe way to indicate an element has been upgraded.
     this.removeAttribute('unresolved');
-    this._ensureLazyLoaded();
   }
 
   _ensureLazyLoaded() {
