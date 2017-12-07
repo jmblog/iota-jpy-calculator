@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ZopfliPlugin = require('zopfli-webpack-plugin');
 const lazyResources = require('./src/lazy-resources.json');
 
 const entry = {};
@@ -31,13 +30,6 @@ module.exports = {
         minifyJS: true,
         minifyCSS: true,
       },
-    }),
-    new ZopfliPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'zopfli',
-      test: /\.(js|html)$/,
-      threshold: 10240,
-      minRatio: 0.8,
     }),
   ],
   output: {
