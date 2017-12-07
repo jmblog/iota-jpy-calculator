@@ -13,13 +13,14 @@ lazyResources.forEach(resource => {
 module.exports = {
   entry: {
     'iota-app': './src/iota-app.js',
+    vendor: ['@polymer/polymer/polymer-element', 'axios', 'numeral', 'socket.io-client'],
     ...entry,
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin(['manifest.json', { from: 'images/', to: 'images/' }]),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
+      name: 'vendor',
     }),
     new HtmlWebpackPlugin({
       inject: false,
