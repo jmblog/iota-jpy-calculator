@@ -23,8 +23,7 @@
     "uglifyjs-webpack-plugin": "^1.1.2",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5",
-    "webpack-merge": "^4.1.1",
-    "zopfli-webpack-plugin": "^0.1.0"
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "@polymer/polymer": "^3.0.0-pre.1",
