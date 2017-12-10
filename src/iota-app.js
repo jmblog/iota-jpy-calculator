@@ -124,7 +124,6 @@ class IotaApp extends PolymerElement {
         },
       })
       .then(res => {
-        console.log(res.data);
         this[`${fromSymbol}_${toSymbol}`] = res.data[toSymbol.toUpperCase()];
       });
   }
@@ -147,7 +146,6 @@ class IotaApp extends PolymerElement {
         if (flag === '1' || flag === '2') {
           const price = data[5] || 0;
           this[`${fromCurrency}_${toCurrency}`] = price;
-          console.log(`${fromCurrency}_${toCurrency}`, price);
         }
       }
     });
