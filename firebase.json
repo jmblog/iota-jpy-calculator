@@ -9,7 +9,7 @@
           {
             "key": "Link",
             "value":
-              "</vendor.js>;rel=preload;as=script,</iota-app.js>;rel=preload;as=script,</iota-ticker.js>;rel=preload;as=script,</iota-ticker-sub.js>;rel=preload;as=script,</iota-calculator.js>;rel=preload;as=script,</iota-app-footer.js>;rel=preload;as=script"
+              "</webcomponents-lite.js>;rel=preload;as=script,</vendor.js>;rel=preload;as=script,</iota-app.js>;rel=preload;as=script,</iota-ticker.js>;rel=preload;as=script,</iota-ticker-sub.js>;rel=preload;as=script,</iota-calculator.js>;rel=preload;as=script,</iota-app-footer.js>;rel=preload;as=script"
           }
         ]
       }

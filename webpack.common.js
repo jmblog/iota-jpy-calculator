@@ -18,7 +18,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new CopyWebpackPlugin(['manifest.json', { from: 'images/', to: 'images/' }]),
+    new CopyWebpackPlugin([
+      'manifest.json',
+      { from: 'images/', to: 'images/' },
+      { from: 'node_modules/@webcomponents/webcomponentsjs/webcomponents-lite.js', flatten: true },
+    ]),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
     }),
