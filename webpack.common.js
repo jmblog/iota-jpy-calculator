@@ -13,7 +13,7 @@ lazyResources.forEach(resource => {
 module.exports = {
   entry: {
     'iota-app': './src/iota-app.js',
-    vendor: ['@polymer/polymer/polymer-element', 'axios', 'numeral', 'socket.io-client'],
+    vendor: ['@polymer/polymer/polymer-element', 'numeral', 'socket.io-client'],
     ...entry,
   },
   plugins: [

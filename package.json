@@ -23,8 +23,8 @@
   "dependencies": {
     "@polymer/polymer": "^3.0.0-pre.1",
     "@webcomponents/webcomponentsjs": "^1.0.20",
-    "axios": "^0.17.1",
     "numeral": "^2.0.6",
+    "simple-get": "^2.7.0",
     "socket.io-client": "^2.0.4"
   }
 }

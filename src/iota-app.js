@@ -1,5 +1,4 @@
 import { Element as PolymerElement } from '@polymer/polymer/polymer-element';
-import axios from 'axios';
 import io from 'socket.io-client';
 import lazyResources from './lazy-resources.json';
 
@@ -116,15 +115,14 @@ class IotaApp extends PolymerElement {
   }
 
   _getInitialPrice(fromSymbol, toSymbol) {
-    axios
-      .get('https://min-api.cryptocompare.com/data/price', {
-        params: {
-          fsym: fromSymbol.toUpperCase(),
-          tsyms: toSymbol.toUpperCase(),
-        },
-      })
+    fetch(
+      `https://min-api.cryptocompare.com/data/price?fsym=${fromSymbol.toUpperCase()}&tsyms=${toSymbol.toUpperCase()}`,
+    )
       .then(res => {
-        this[`${fromSymbol}_${toSymbol}`] = res.data[toSymbol.toUpperCase()];
+        return res.json();
+      })
+      .then(json => {
+        this[`${fromSymbol}_${toSymbol}`] = json[toSymbol.toUpperCase()];
       });
   }
 
