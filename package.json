@@ -4,16 +4,11 @@
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js && npm run sw-precache",
-    "sw-precache":
-      "sw-precache --root=dist --config=sw-precache-config.js && uglifyjs dist/service-worker.js -o dist/service-worker.js",
+    "sw-precache": "sw-precache --root=dist --config=sw-precache-config.js && uglifyjs dist/service-worker.js -o dist/service-worker.js",
     "deploy": "npm run build && firebase deploy --only hosting"
   },
   "devDependencies": {
     "@kaizenplatform/prettier-config": "^0.1.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-custom-element-classes": "^0.1.0",
-    "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.3",
     "html-webpack-plugin": "^2.30.1",
