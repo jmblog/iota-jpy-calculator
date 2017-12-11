@@ -1,4 +1,4 @@
 module.exports = {
-  staticFileGlobs: ['manifest.json', 'images/*', 'src/*.js', 'index.html'],
+  staticFileGlobs: ['manifest.json', 'images/*'],
   stripPrefix: 'src/',
 };
