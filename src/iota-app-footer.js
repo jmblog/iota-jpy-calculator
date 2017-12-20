@@ -45,7 +45,7 @@ class IotaAppFooter extends PolymerElement {
       }
       </style>
       <div class="donation">
-        <p>Feel like giving me ☕️ or 🍺 ?</p>
+        <p>Feel like giving me ☕️ or 🍺 ? Donations always welcome 🙂</p>
         IOTA Address:
         <pre>ZMSIPJODCKDCVLAKMF9ECFVREWKRPRHVUKP9GBKMCWGEYFCOBTIJWRLVNPHPCYUJKGQRGZANUJVXXALVXCJD9SXYC9</pre>
       </div>
