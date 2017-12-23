@@ -44,11 +44,6 @@ class IotaAppFooter extends PolymerElement {
         font-style: normal;        
       }
       </style>
-      <div class="donation">
-        <p>Feel like giving me ☕️ or 🍺 ? Donations always welcome 🙂</p>
-        IOTA Address:
-        <pre>ZMSIPJODCKDCVLAKMF9ECFVREWKRPRHVUKP9GBKMCWGEYFCOBTIJWRLVNPHPCYUJKGQRGZANUJVXXALVXCJD9SXYC9</pre>
-      </div>
       <div class="disclaimer">
       <ul>
         <li>本ウェブサイトで表示しているIOTA/JPYの価格は、<a href="https://www.cryptocompare.com/">cryptocompare.com</a> が提供するマーケットデータから算出した概算値です。実際の取引価格とは異なります。</li>
